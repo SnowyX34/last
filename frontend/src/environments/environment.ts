@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  endpoint: 'http://ovoy-controller-git-main-ulises-projects-9ccc4504.vercel.app'
+  endpoint: 'http://Yovoy-controller-git-main-ulises-projects-9ccc4504.vercel.app'
 };
 
 /*
