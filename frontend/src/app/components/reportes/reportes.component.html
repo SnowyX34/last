@@ -1,0 +1,45 @@
+<app-navbar></app-navbar>
+<nav aria-label="breadcrumb">
+    <div class="container-fluid p-3">
+        <div class="row">
+            <div class="col-12">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/home" class="text-decoration-none">Inicio</a></li>
+                    <li class="breadcrumb-item" aria-current="page">Reportes</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="containers">
+    <h2>Reporte de Quejas</h2>
+    <form [formGroup]="reporteForm" (ngSubmit)="enviarQueja()">
+        <label>Nombre completo:</label>
+        <input type="text" formControlName="nombre" required>
+
+        <label>Correo electrónico:</label>
+        <input type="email" formControlName="correo" required>
+
+        <label>Fecha del incidente:</label>
+        <input type="date" formControlName="fecha" required>
+
+        <label>Hora del incidente:</label>
+        <input type="time" formControlName="hora" required>
+
+        <label>Ruta o número de unidad:</label>
+        <input type="text" formControlName="ruta" required>
+
+        <label>Categoría de la queja:</label>
+        <select formControlName="categoria" required>
+            <option value="conductor">Conductor</option>
+            <option value="unidad">Unidad</option>
+            <option value="servicio">Servicio</option>
+            <option value="otros">Otros</option>
+        </select>
+
+        <label>Descripción:</label>
+        <input type="text" formControlName="descripcion" required class="mb-2">
+        <button type="submit">Enviar Queja</button>
+    </form>
+</div>
+<app-footer></app-footer>

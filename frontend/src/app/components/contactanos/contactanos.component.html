@@ -1,0 +1,42 @@
+<app-navbar></app-navbar>
+<nav aria-label="breadcrumb">
+    <div class="container-fluid p-3">
+        <div class="row">
+            <div class="col-12">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/home" class="text-decoration-none">Inicio</a></li>
+                    <li class="breadcrumb-item" aria-current="page">Contactanos</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="container mt-5">
+    <h1 class="text-center">Contáctanos</h1>
+    <hr>
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Formulario de Contacto</h3>
+            <form (submit)="enviarFormulario(); $event.preventDefault();">
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" [(ngModel)]="nombre" required>
+                </div>
+                <div class="mb-3">
+                    <label for="correo" class="form-label">Correo Electrónico</label>
+                    <input type="email" class="form-control" id="correo" [(ngModel)]="correo" required>
+                </div>
+                <div class="mb-3">
+                    <label for="mensaje" class="form-label">Mensaje</label>
+                    <textarea class="form-control" id="mensaje" [(ngModel)]="mensaje" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+            <div *ngIf="mensajeRespuesta" class="alert alert-success mt-3">{{ mensajeRespuesta }}</div>
+            <div *ngIf="error" class="alert alert-danger mt-3">{{ error }}</div>
+        </div>
+    </div>
+</div>
+
+
+<app-footer></app-footer>

@@ -1,0 +1,39 @@
+<form class="wrapper" (ngSubmit)="addUser()">
+    <div *ngIf="!loading" class="body">
+        <img class="logo" src="../../../assets/img/login.png" alt="img login">
+        <h3>Registrar Usuario</h3>
+
+        <div class="form-floating mb-3 mt-3">
+            <input type="text" [(ngModel)]="user_name" name="user_name" class="form-control" placeholder="Ingrese nombre" required>
+            <label>Nombre</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="text" [(ngModel)]="user_secondName" name="user_secondName" class="form-control" placeholder="Ingrese apellido" required>
+            <label>Apellido</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="email" [(ngModel)]="email" name="email" class="form-control" placeholder="Ingrese email" required>
+            <label>Email</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="password" [(ngModel)]="password" name="password" class="form-control" placeholder="Ingrese password" required>
+            <label>Password</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="password" [(ngModel)]="confirmPassword" name="confirmPassword" class="form-control" placeholder="Repita password" required>
+            <label>Confirmar Password</label>
+        </div>
+
+        <div class="d-grid gap-2 mb-3">
+            <button type="submit" class="btn btn-primary btn-lg">Registrar</button>
+        </div>
+
+        <a routerLink="/login">Volver</a>
+    </div>
+
+    <app-spinner *ngIf="loading"></app-spinner>
+</form>

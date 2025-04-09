@@ -1,0 +1,22 @@
+<app-navbar></app-navbar>
+<div class="container mt-2 text-center">
+    <h2>Unidades</h2>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Placa</th>
+            <th scope="col">Modelo</th>
+            <th scope="col">ID Chofer</th>
+            <th scope="col">Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let unit of listUnits">
+            <td>{{ unit.placa }}</td>
+            <td>{{ unit.modelo }}</td>
+            <td>{{ unit.id_chofer }}</td>
+            <td>{{ unit.estado }}</td>
+          </tr>
+        </tbody>
+      </table>
+</div>
